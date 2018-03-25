@@ -1,0 +1,25 @@
+{
+  "name": "webpack-wasm-skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:wasm": "cargo +nightly build --target wasm32-unknown-unknown --release",
+    "postbuild:wasm": "wasm-bindgen target/wasm32-unknown-unknown/release/webpack_wasm_skeleton.wasm --out-dir src",
+    "build:js": "webpack --mode production",
+    "build": "run-s build:wasm build:js",
+    "dev:wasm": "cargo watch -i 'src/{webpack_wasm_skeleton_bg.wasm,webpack_wasm_skeleton.js}' -s 'npm run build:wasm'",
+    "dev:js": "webpack-dev-server --mode development",
+    "dev": "run-p dev:wasm dev:js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.1.0",
+    "npm-run-all": "^4.1.2",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
+  }
+}
