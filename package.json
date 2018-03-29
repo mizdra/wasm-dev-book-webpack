@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prebuild:wasm": "cargo +nightly check",
     "build:wasm": "cargo +nightly build --target wasm32-unknown-unknown --release",
     "postbuild:wasm": "wasm-bindgen target/wasm32-unknown-unknown/release/webpack_wasm_skeleton.wasm --out-dir src",
     "build:js": "webpack --mode production",
