@@ -1,5 +1,5 @@
 [package]
-name = "webpack-wasm-skeleton"
+name = "wasm-dev-book-webpack"
 version = "0.1.0"
 authors = ["mizdra <pp.mizdra@gmail.com>"]
 

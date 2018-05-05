@@ -1,15 +1,15 @@
 {
-  "name": "webpack-wasm-skeleton",
+  "name": "wasm-dev-book-webpack",
   "version": "1.0.0",
-  "description": "",
+  "description": "Webpackを使ったWebAssemblyの開発環境.",
   "main": "index.js",
   "scripts": {
     "prebuild:wasm": "cargo +nightly check",
     "build:wasm": "cargo +nightly build --target wasm32-unknown-unknown --release",
-    "postbuild:wasm": "wasm-bindgen target/wasm32-unknown-unknown/release/webpack_wasm_skeleton.wasm --out-dir src",
+    "postbuild:wasm": "wasm-bindgen target/wasm32-unknown-unknown/release/wasm_dev_book_webpack.wasm --out-dir src",
     "build:js": "webpack --mode production",
     "build": "run-s build:wasm build:js",
-    "dev:wasm": "cargo watch -i 'src/{webpack_wasm_skeleton_bg.wasm,webpack_wasm_skeleton.js}' -s 'npm run build:wasm'",
+    "dev:wasm": "cargo watch -i 'src/{wasm_dev_book_webpack_bg.wasm,wasm_dev_book_webpack.js}' -s 'npm run build:wasm'",
     "dev:js": "webpack-dev-server --mode development",
     "dev": "run-p dev:wasm dev:js"
   },

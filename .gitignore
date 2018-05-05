@@ -57,5 +57,5 @@ Cargo.lock
 
 ### User configuration
 /dist
-/src/webpack_wasm_skeleton_bg.wasm
-/src/webpack_wasm_skeleton.js
+/src/wasm_dev_book_webpack_bg.wasm
+/src/wasm_dev_book_webpack.js
