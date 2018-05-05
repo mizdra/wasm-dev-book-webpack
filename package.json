@@ -6,7 +6,7 @@
   "scripts": {
     "prebuild:wasm": "cargo +nightly check",
     "build:wasm": "cargo +nightly build --target wasm32-unknown-unknown --release",
-    "postbuild:wasm": "wasm-bindgen target/wasm32-unknown-unknown/release/wasm_dev_book_webpack.wasm --out-dir src",
+    "postbuild:wasm": "wasm-bindgen target/wasm32-unknown-unknown/release/wasm_dev_book_webpack.wasm --out-dir src --no-typescript",
     "build:js": "webpack --mode production",
     "build": "run-s build:wasm build:js",
     "dev:wasm": "cargo watch -i 'src/{wasm_dev_book_webpack_bg.wasm,wasm_dev_book_webpack.js}' -s 'npm run build:wasm'",
