@@ -4,7 +4,6 @@
   "description": "Webpackを使ったWebAssemblyの開発環境.",
   "main": "index.js",
   "scripts": {
-    "prebuild:wasm": "cargo check",
     "build:wasm": "cargo build --target wasm32-unknown-unknown --release",
     "postbuild:wasm": "wasm-bindgen target/wasm32-unknown-unknown/release/wasm_dev_book_webpack.wasm --out-dir src --no-typescript",
     "build:js": "webpack --mode production",
